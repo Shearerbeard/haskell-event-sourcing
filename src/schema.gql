@@ -1,15 +1,22 @@
-
 type Query {
   deity(name: String! = "Morpheus"): Deity!
 }
 
-"""
-Description for Deity
-"""
+type Subscription {
+  newDeity: Deity!
+}
+
+type Mutation {
+  createDeity(name: String!, power: String): Deity!
+}
+
 type Deity {
-  """
-  Description for name
-  """
   name: String!
-  power: String @deprecated(reason: "some reason for")
+  power: String
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
 }

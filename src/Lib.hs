@@ -35,11 +35,11 @@ rootResolver =
       subscriptionResolver = Undefined
     }
   where
-    diety DietyArgs {name} =
+    diety DietyArgs { name } =
       pure
         Diety
           { name = pure name,
-            power = pure (Just "Shapeshifting")
+            power = pure (Just "Shapeshifting \n")
           }
 
 someFunc :: IO ()
