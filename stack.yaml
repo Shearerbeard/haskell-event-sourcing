@@ -17,7 +17,8 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-18.28
+resolver: lts-18.24 
+# resolver: lts-16.31
 #  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/19/1.yaml
 
 # User packages to be built.
@@ -35,11 +36,16 @@ packages:
 # These entries can reference officially published versions as well as
 # forks / in-progress versions pinned to a git hash. For example:
 #
+# extra-deps:
+#   - morpheus-graphql-0.17.0
+#   - morpheus-graphql-app-0.17.0
+#   - morpheus-graphql-core-0.17.0
 extra-deps:
-  - morpheus-graphql-0.19.0
-  - morpheus-graphql-app-0.19.0
-  - morpheus-graphql-core-0.19.0
-  - morpheus-graphql-code-gen-0.19.2
+  - morpheus-graphql-0.19.3
+  - morpheus-graphql-app-0.19.3
+  - morpheus-graphql-core-0.19.3
+  - morpheus-graphql-code-gen-0.19.3
+  # - morpheus-graphql-code-gen-0.17.0
 #
 # extra-deps: []
 

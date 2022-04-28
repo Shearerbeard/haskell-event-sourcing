@@ -20,7 +20,7 @@ import Data.ByteString.Lazy.Char8 (ByteString)
 import Data.FileEmbed (makeRelativeToProject)
 import Data.Morpheus (interpreter)
 import Data.Morpheus.Document (importGQLDocument)
-import Data.Morpheus.Types (RootResolver (..), Undefined (..))
+import Data.Morpheus.Types (Arg (Arg), RootResolver (..), Undefined (..))
 import Data.Text (Text)
 import Foreign.C (eDIRTY)
 import GHC.IO.Device (IODeviceType (Directory))
@@ -30,16 +30,16 @@ makeRelativeToProject "src/schema.gql" >>= importGQLDocument
 rootResolver :: RootResolver IO () Query Undefined Undefined
 rootResolver =
   RootResolver
-    { queryResolver = Query {diety},
+    { queryResolver = Query {deity},
       mutationResolver = Undefined,
       subscriptionResolver = Undefined
     }
   where
-    diety DietyArgs { name } =
+    deity (Arg name) =
       pure
-        Diety
+        Deity
           { name = pure name,
-            power = pure (Just "Shapeshifting \n")
+            power = pure (Just "Shapeshifting \n ")
           }
 
 someFunc :: IO ()
